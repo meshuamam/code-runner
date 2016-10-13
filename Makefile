@@ -1,8 +1,8 @@
-HOSTNAME=codewars
+HOSTNAME=codaisseur
 
 # Building haskell and erlang images have been suspended (frozen) until they are able to be repaired
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems erlang haskell
-#CONTAINERS=dotnet jvm node python ruby alt func dart systems rust julia crystal
+# CONTAINERS=dotnet jvm node python ruby alt func dart systems rust julia crystal
 CONTAINERS=node dotnet jvm python ruby alt rust julia crystal
 
 ALL_CONTAINERS=${CONTAINERS} base
@@ -34,32 +34,32 @@ clean: docker_rm_exited docker_rmi_temporary
 deep-clean: docker_rmi
 
 pull:
-	docker pull codewars/base-runner
-	docker pull codewars/ruby-runner
-	docker pull codewars/node-runner
-	docker pull codewars/python-runner
-	docker pull codewars/dotnet-runner
-	docker pull codewars/jvm-runner
-	docker pull codewars/systems-runner
-	docker pull codewars/func-runner
-	docker pull codewars/erlang-runner
-	docker pull codewars/alt-runner
-	docker pull codewars/rust-runner || true
-	docker pull codewars/julia-runner || true
-	docker pull codewars/crystal-runner || true
-	docker pull codewars/dart-runner || true
+	docker pull codaisseur/base-runner
+	docker pull codaisseur/ruby-runner
+	docker pull codaisseur/node-runner
+	# docker pull codaisseur/python-runner
+	# docker pull codaisseur/dotnet-runner
+	# docker pull codaisseur/jvm-runner
+	# docker pull codaisseur/systems-runner
+	# docker pull codaisseur/func-runner
+	# docker pull codaisseur/erlang-runner
+	# docker pull codaisseur/alt-runner
+	# docker pull codaisseur/rust-runner || true
+	# docker pull codaisseur/julia-runner || true
+	# docker pull codaisseur/crystal-runner || true
+	# docker pull codaisseur/dart-runner || true
 
 save:
-	docker save codewars/base-runner > build/image.tar
-	docker save codewars/ruby-runner > build/image.tar
-	docker save codewars/node-runner > build/image.tar
-	docker save codewars/python-runner > build/image.tar
-	docker save codewars/dotnet-runner > build/image.tar
-	docker save codewars/jvm-runner > build/image.tar
-	docker save codewars/func-runner > build/image.tar
-	docker save codewars/erlang-runner > build/image.tar
-	docker save codewars/alt-runner > build/image.tar
-	docker save codewars/rust-runner > build/image.tar
-	docker save codewars/dart-runner > build/image.tar
-	docker save codewars/crystal-runner > build/image.tar
-	docker save codewars/julia-runner > build/image.tar
+	docker save codaisseur/base-runner > build/image.tar
+	docker save codaisseur/ruby-runner > build/image.tar
+	docker save codaisseur/node-runner > build/image.tar
+	# docker save codaisseur/python-runner > build/image.tar
+	# docker save codaisseur/dotnet-runner > build/image.tar
+	# docker save codaisseur/jvm-runner > build/image.tar
+	# docker save codaisseur/func-runner > build/image.tar
+	# docker save codaisseur/erlang-runner > build/image.tar
+	# docker save codaisseur/alt-runner > build/image.tar
+	# docker save codaisseur/rust-runner > build/image.tar
+	# docker save codaisseur/dart-runner > build/image.tar
+	# docker save codaisseur/crystal-runner > build/image.tar
+	# docker save codaisseur/julia-runner > build/image.tar

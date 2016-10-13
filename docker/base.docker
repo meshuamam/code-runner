@@ -1,6 +1,6 @@
-# BUILD-USING:    docker build -t codewars/runner-base .
-# TEST-USING:     docker run --rm -i -t --name=test-runner-base --entrypoint=/bin/bash codewars/runner-base -s
-# RUN-USING:      docker run --rm --name=runner-base codewars/runner-base --help
+# BUILD-USING:    docker build -t codaisseur/runner-base .
+# TEST-USING:     docker run --rm -i -t --name=test-runner-base --entrypoint=/bin/bash codaisseur/runner-base -s
+# RUN-USING:      docker run --rm --name=runner-base codaisseur/runner-base --help
 
 # Pull base image.
 FROM buildpack-deps:trusty
