@@ -1,0 +1,26 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/codewarsRunnerCli",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "v0J0Joz6U4nTVltQti/X63CIvjBMOUMQbJOivbjFWNmS1L8QOD4WqyjORskNqZzh3X4q2DDA4jYIpKPKAwIphg=="
+    },
+    "local": {},
+    "github": {
+      "clientID": "your github client id",
+      "clientSecret": "your github client secret",
+      "permissions": {
+        "scope": []
+      }
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "permissions": {
+        "scope": ["profile"]
+      }
+    }
+  }
+}
