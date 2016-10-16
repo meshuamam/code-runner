@@ -10,26 +10,15 @@ const defaults = {};
 const run = require('../../../../lib/runner').run;
 
 const runCode = data =>  {
-  let {
-    code,
-    fixture,
-    setup,
-    language,
-    languageVersion,
-    testFramework,
-    timeout,
-    format,
-  } = data;
-
   const opts = Object.assign({}, {
-    code,
-    fixture,
-    setup,
-    language,
-    languageVersion,
-    testFramework,
-    timeout,
-    format,
+    code: data.code,
+    fixture: data.fixture,
+    setup: data.setup,
+    language: data.language,
+    languageVersion: data.languageVersion,
+    testFramework: data.testFramework,
+    timeout: data.timeout,
+    format: data.format,
   }, {
     testFramework: 'cw',
     timeout: 5000,
