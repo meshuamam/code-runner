@@ -4,7 +4,7 @@
 # EXAMPLE USAGE:  docker run --rm codaisseur/runner-ruby run -l ruby -c "puts 1+1"
 
 # Pull base image.
-FROM codaisseur/base-runner
+FROM quay.io/codaisseur/base-runner
 
 #Install ruby
 # skip installing gem documentation
