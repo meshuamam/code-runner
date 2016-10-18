@@ -2,7 +2,7 @@
 # EXAMPLE USAGE:  docker run --rm codaisseur/node-runner run -l javascript -c "console.log(1+1)"
 
 # Pull base image.
-FROM codaisseur/base-runner
+FROM quay.io/codaisseur/base-runner
 
 # Install additional libraries
 # NOTE: due to this issue https://github.com/npm/npm/issues/9863 we need to install everything at once, which sucks

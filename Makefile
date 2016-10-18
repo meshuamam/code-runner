@@ -1,4 +1,4 @@
-HOSTNAME=codaisseur
+HOSTNAME=quay.io/codaisseur
 
 # Building haskell and erlang images have been suspended (frozen) until they are able to be repaired
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems erlang haskell
@@ -34,25 +34,25 @@ clean: docker_rm_exited docker_rmi_temporary
 deep-clean: docker_rmi
 
 pull:
-	docker pull codaisseur/base-runner
-	docker pull codaisseur/ruby-runner
-	docker pull codaisseur/node-runner
-	# docker pull codaisseur/python-runner
-	# docker pull codaisseur/dotnet-runner
-	# docker pull codaisseur/jvm-runner
-	# docker pull codaisseur/systems-runner
-	# docker pull codaisseur/func-runner
-	# docker pull codaisseur/erlang-runner
-	# docker pull codaisseur/alt-runner
-	# docker pull codaisseur/rust-runner || true
-	# docker pull codaisseur/julia-runner || true
-	# docker pull codaisseur/crystal-runner || true
-	# docker pull codaisseur/dart-runner || true
+	docker pull quay.io/codaisseur/base-runner
+	docker pull quay.io/codaisseur/ruby-runner
+	# docker pull quay.io/codaisseur/node-runner
+	# docker pull quay.io/codaisseur/python-runner
+	# docker pull quay.io/codaisseur/dotnet-runner
+	# docker pull quay.io/codaisseur/jvm-runner
+	# docker pull quay.io/codaisseur/systems-runner
+	# docker pull quay.io/codaisseur/func-runner
+	# docker pull quay.io/codaisseur/erlang-runner
+	# docker pull quay.io/codaisseur/alt-runner
+	# docker pull quay.io/codaisseur/rust-runner || true
+	# docker pull quay.io/codaisseur/julia-runner || true
+	# docker pull quay.io/codaisseur/crystal-runner || true
+	# docker pull quay.io/codaisseur/dart-runner || true
 
 save:
 	docker save codaisseur/base-runner > build/image.tar
 	docker save codaisseur/ruby-runner > build/image.tar
-	docker save codaisseur/node-runner > build/image.tar
+	# docker save codaisseur/node-runner > build/image.tar
 	# docker save codaisseur/python-runner > build/image.tar
 	# docker save codaisseur/dotnet-runner > build/image.tar
 	# docker save codaisseur/jvm-runner > build/image.tar
@@ -63,3 +63,8 @@ save:
 	# docker save codaisseur/dart-runner > build/image.tar
 	# docker save codaisseur/crystal-runner > build/image.tar
 	# docker save codaisseur/julia-runner > build/image.tar
+
+push:
+	docker push quay.io/codaisseur/base-runner
+	docker push quay.io/codaisseur/ruby-runner
+	# docker push quay.io/codaisseur/node-runner

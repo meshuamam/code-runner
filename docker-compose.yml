@@ -1,7 +1,7 @@
 version: '2'
 services:
   node-runner:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -12,7 +12,7 @@ services:
     command: bash
 
   jvm-runner:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -22,7 +22,7 @@ services:
     command: bash
 
   ruby-runner:
-    image: codewars/ruby-runner
+    image: quay.io/codaisseur/ruby-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -32,7 +32,7 @@ services:
     command: bash
 
   python-runner:
-    image: codewars/python-runner
+    image: quay.io/codaisseur/python-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -42,7 +42,7 @@ services:
     command: bash
 
   func-runner:
-    image: codewars/func-runner
+    image: quay.io/codaisseur/func-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -52,7 +52,7 @@ services:
     command: bash
 
   haskell-runner:
-    image: codewars/haskell-runner
+    image: quay.io/codaisseur/haskell-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -62,7 +62,7 @@ services:
     command: bash
 
   systems-runner:
-    image: codewars/systems-runner
+    image: quay.io/codaisseur/systems-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -72,7 +72,7 @@ services:
     command: bash
 
   erlang-runner:
-    image: codewars/erlang-runner
+    image: quay.io/codaisseur/erlang-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -82,7 +82,7 @@ services:
     command: bash
 
   alt-runner:
-    image: codewars/alt-runner
+    image: quay.io/codaisseur/alt-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -92,7 +92,7 @@ services:
     command: bash
 
   dotnet-runner:
-    image: codewars/dotnet-runner
+    image: quay.io/codaisseur/dotnet-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -102,7 +102,7 @@ services:
     command: bash
 
   dart-runner:
-    image: codewars/dart-runner
+    image: quay.io/codaisseur/dart-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -112,7 +112,7 @@ services:
     command: bash
 
   rust-runner:
-    image: codewars/rust-runner
+    image: quay.io/codaisseur/rust-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -122,7 +122,7 @@ services:
     command: bash
 
   julia-runner:
-    image: codewars/julia-runner
+    image: quay.io/codaisseur/julia-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -132,7 +132,7 @@ services:
     command: bash
 
   crystal-runner:
-    image: codewars/crystal-runner
+    image: quay.io/codaisseur/crystal-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -143,7 +143,7 @@ services:
 
   # LANGUAGE SPECIFIC HELPERS
   javascript:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -152,7 +152,7 @@ services:
     entrypoint: 'node run -l javascript'
 
   javascript_test:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -161,7 +161,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/javascript_spec.js'
 
   coffeescript:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -170,7 +170,7 @@ services:
     entrypoint: 'node run -l coffeescript'
 
   coffeescript_test:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -179,7 +179,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/coffeescript_spec.js'
 
   typescript:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -189,7 +189,7 @@ services:
     entrypoint: 'node run -l typescript'
 
   typescript_test:
-    image: codewars/node-runner
+    image: quay.io/codaisseur/node-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -198,7 +198,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/typescript_spec.js'
 
   python:
-    image: codewars/python-runner
+    image: quay.io/codaisseur/python-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -207,7 +207,7 @@ services:
     entrypoint: 'node run -l python'
 
   python_test:
-    image: codewars/python-runner
+    image: quay.io/codaisseur/python-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -216,7 +216,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/python_spec.js'
 
   python3:
-    image: codewars/python-runner
+    image: quay.io/codaisseur/python-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -225,7 +225,7 @@ services:
     entrypoint: 'node run -l python3'
 
   python3_test:
-    image: codewars/python-runner
+    image: quay.io/codaisseur/python-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -234,7 +234,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/python3_spec.js'
 
   ruby:
-    image: codewars/ruby-runner
+    image: quay.io/codaisseur/ruby-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -243,7 +243,7 @@ services:
     entrypoint: 'node run -l ruby'
 
   ruby_test:
-    image: codewars/ruby-runner
+    image: quay.io/codaisseur/ruby-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -252,7 +252,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/ruby_spec.js'
 
   haskell:
-    image: codewars/haskell-runner
+    image: quay.io/codaisseur/haskell-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -261,7 +261,7 @@ services:
     entrypoint: 'node run -l haskell'
 
   haskell_test:
-    image: codewars/haskell-runner
+    image: quay.io/codaisseur/haskell-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -270,7 +270,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/haskell_spec.js'
 
   java:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -279,7 +279,7 @@ services:
     entrypoint: 'node run -l java'
 
   java_test:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -288,7 +288,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/java_spec.js'
 
   clojure:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -297,7 +297,7 @@ services:
     entrypoint: 'node run -l clojure'
 
   clojure_test:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -306,7 +306,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/clojure_spec.js'
 
   php:
-    image: codewars/alt-runner
+    image: quay.io/codaisseur/alt-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -315,7 +315,7 @@ services:
     entrypoint: 'node run -l php'
 
   php_test:
-    image: codewars/alt-runner
+    image: quay.io/codaisseur/alt-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -324,7 +324,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/php_spec.js'
 
   cpp:
-    image: codewars/systems-runner
+    image: quay.io/codaisseur/systems-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -333,7 +333,7 @@ services:
     entrypoint: 'node run -l cpp'
 
   cpp_test:
-    image: codewars/systems-runner
+    image: quay.io/codaisseur/systems-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -342,7 +342,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/cpp_spec.js'
 
   csharp:
-    image: codewars/dotnet-runner
+    image: quay.io/codaisseur/dotnet-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -351,7 +351,7 @@ services:
     entrypoint: 'node run -l csharp'
 
   csharp_test:
-    image: codewars/dotnet-runner
+    image: quay.io/codaisseur/dotnet-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -360,7 +360,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/csharp_spec.js'
 
   elixir:
-    image: codewars/erlang-runner
+    image: quay.io/codaisseur/erlang-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -369,7 +369,7 @@ services:
     entrypoint: 'node run -l elixir'
 
   elixir_test:
-    image: codewars/erlang-runner
+    image: quay.io/codaisseur/erlang-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -378,7 +378,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/elixir_spec.js'
 
   erlang:
-    image: codewars/erlang-runner
+    image: quay.io/codaisseur/erlang-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -387,7 +387,7 @@ services:
     entrypoint: 'node run -l erlang'
 
   erlang_test:
-    image: codewars/erlang-runner
+    image: quay.io/codaisseur/erlang-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -396,7 +396,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/erlang_spec.js'
 
   rust_test:
-    image: codewars/rust-runner
+    image: quay.io/codaisseur/rust-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -405,7 +405,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/rust_spec.js'
 
   dart_test:
-    image: codewars/dart-runner
+    image: quay.io/codaisseur/dart-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -414,7 +414,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/dart_spec.js'
 
   kotlin:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -423,7 +423,7 @@ services:
     entrypoint: 'node run -l kotlin'
 
   kotlin_test:
-    image: codewars/jvm-runner
+    image: quay.io/codaisseur/jvm-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -432,7 +432,7 @@ services:
     entrypoint: 'mocha -t 5000 test/runners/kotlin_spec.js'
 
   crystal:
-    image: codewars/crystal-runner
+    image: quay.io/codaisseur/crystal-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
@@ -441,7 +441,7 @@ services:
     entrypoint: 'node run -l crystal'
 
   crystal_test:
-    image: codewars/crystal-runner
+    image: quay.io/codaisseur/crystal-runner
     volumes:
       - ./lib:/runner/lib
       - ./examples:/runner/examples
