@@ -17,3 +17,4 @@ target/*
 /README.md
 node_modules/*
 docker/*
+charts/*

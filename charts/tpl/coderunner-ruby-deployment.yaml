@@ -1,0 +1,56 @@
+#helm:generate helm template -o $HELM_GENERATE_DIR/manifests/coderunner-ruby-deployment.yaml -d $HELM_GENERATE_DIR/tpl/generate_params.toml $HELM_GENERATE_DIR/tpl/coderunner-ruby-deployment.yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: coderunner-ruby
+  namespace: coderunner
+  labels:
+    heritage: coderunner
+  annotations:
+    helm-keep: "true"
+    coderunner.codaisseur.cloud/version: v1.0.0
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: coderunner-ruby
+  template:
+    metadata:
+      labels:
+        app: coderunner-ruby
+    spec:
+      serviceAccount: coderunner-ruby
+      containers:
+        - name: coderunner-ruby
+          image: quay.io/codaisseur/ruby-runner
+          imagePullPolicy: Always # Change to IfNotPresent after we versioned the images
+          command: ["--entrypoint=/bin/bash","npm","start"]
+          ports:
+            - containerPort: 5000
+              name: http
+          env:
+            - name: "PORT"
+              value: 5000
+            - name: "DATABASE_URL"
+              value: "mongodb://{{ env "MONGODB_USER" | default .mongodb.user}}:{{ env "MONGODB_PASSWORD" | default .mongodb.password}}@{{ env "MONGODB_HOST" | default .mongodb.host}}:{{ env "MONGODB_PORT" | default .mongodb.port}}/{{ env "MONGODB_DATABASE" | default .mongodb.database}}"
+            - name: "POD_NAMESPACE"
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 30
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 30
+            timeoutSeconds: 1
