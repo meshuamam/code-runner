@@ -43,6 +43,7 @@ services:
       - ./examples:/runner/examples
       - ./frameworks:/runner/frameworks
       - ./test:/runner/test
+      - ./src:/runner/src
     entrypoint: ''
     environment:
       - DATABASE_URL=mongodb://mongodb:27017/
