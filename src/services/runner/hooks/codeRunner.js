@@ -9,7 +9,7 @@ const defaults = {};
 
 const run = require('../../../../lib/runner').run;
 
-const runCode = (data, cb) =>  {
+const runCode = (data) =>  {
   const opts = Object.assign({}, {
     code: data.code,
     fixture: data.fixture,
@@ -24,19 +24,21 @@ const runCode = (data, cb) =>  {
     format: 'default'
   });
 
-  return run(opts, cb);
+  return new Promise((cb) => {
+    return run(opts, cb);
+  });
 };
 
 module.exports = function(options) {
   options = Object.assign({}, defaults, options);
 
   return function(hook) {
-    runCode(hook.data, (response) => {
-      console.log(response);
+    return runCode(hook.data)
+    .then((response) => {
       hook.data = Object.assign({}, hook.data, {
         response: response
       });
+      return hook;
     });
-    console.log('Haaaiiii!!');
   };
 };
