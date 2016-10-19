@@ -29,7 +29,8 @@ spec:
         - name: coderunner-ruby
           image: quay.io/codaisseur/ruby-runner
           imagePullPolicy: Always # Change to IfNotPresent after we versioned the images
-          command: ["--entrypoint=/bin/bash","npm","start"]
+          entrypoint: ''
+          command: ["npm","start"]
           ports:
             - containerPort: 5000
               name: http
