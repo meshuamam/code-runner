@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A CodeRunner Helm chart for Kubernetes
+name: coderunner
+version: 0.1.0-dev

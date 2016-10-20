@@ -3,7 +3,7 @@ HOSTNAME=quay.io/codaisseur
 # Building haskell and erlang images have been suspended (frozen) until they are able to be repaired
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems erlang haskell
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems rust julia crystal
-CONTAINERS=node dotnet jvm python ruby alt rust julia crystal
+CONTAINERS=ruby
 
 ALL_CONTAINERS=${CONTAINERS} base
 

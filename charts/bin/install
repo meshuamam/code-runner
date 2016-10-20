@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# helm init
+
+set -ex
+
+# Install MongoDB
+helm install \
+    --namespace coderunner \
+    --name coderunner-dev \
+    --values=dev.yaml \
+    coderunner

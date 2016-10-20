@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: coderunner-ruby
-  namespace: coderunner
   labels:
+    app: coderunner-ruby
     heritage: coderunner
 spec:
   ports:
-    - name: http
-      port: 80
-      targetPort: 5000
+  - name: http
+    port: 5000
+    targetPort: 5000
   selector:
     app: coderunner-ruby
