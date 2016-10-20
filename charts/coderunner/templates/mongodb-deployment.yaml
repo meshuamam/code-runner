@@ -60,6 +60,5 @@ spec:
           mountPath: /bitnami/mongodb
       volumes:
       - name: mongodb-data
-        gcePersistentDisk:
-          pdName: {{ .Values.mongoDataDisk }}
-          fsType: ext4
+        persistentVolumeClaim:
+          claimName: mongodb-coderunner-disk

@@ -3,6 +3,7 @@
 # Declare name/value pairs to be passed into your templates.
 # name: value
 
+region: europe-west1-b
 imageRegistry: "quay.io/codaisseur"
 ## Change these when we release a stable version
 dockerTag: latest
@@ -10,6 +11,7 @@ pullPolicy: "Always" # "IfNotPresent"
 
 mongodbImageTag: 3.2.9-r2
 mongoDataDisk: "mongodb-coderunner-disk"
+storageClassName: "ssd"
 
 ## Specify a imagePullPolicy
 ## 'Always' if mongodbImageTag is 'latest', else set to 'IfNotPresent'
