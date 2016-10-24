@@ -11,6 +11,24 @@ services:
     entrypoint: ''
     command: bash
 
+  node-dev:
+    image: quay.io/codaisseur/node-runner
+    volumes:
+      - ./lib:/runner/lib
+      - ./examples:/runner/examples
+      - ./frameworks:/runner/frameworks
+      - ./test:/runner/test
+      - ./tsconfig.json:/runner/tsconfig.json
+      - ./src:/runner/src
+    entrypoint: ''
+    environment:
+      - DATABASE_URL=mongodb://mongodb:27017/
+    command: npm start --no-deprecation
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+
   jvm-runner:
     image: quay.io/codaisseur/jvm-runner
     volumes:

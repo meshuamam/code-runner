@@ -47,6 +47,9 @@ RUN mocha -t 5000 test/runners/javascript_spec.js
 RUN mocha -t 5000 test/runners/coffeescript_spec.js
 RUN mocha -t 7000 test/runners/typescript_spec.js
 
+ENV HOST=0.0.0.0 PORT=5000
+EXPOSE 5000
+
 #timeout is a fallback in case an error with node
 #prevents it from exiting properly
 ENTRYPOINT ["timeout", "15", "node"]

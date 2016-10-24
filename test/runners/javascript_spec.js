@@ -66,6 +66,7 @@ describe( 'javascript runner', function(){
                 done();
             });
         });
+
         it( 'should handle es6 code evaluation', function(done){
             runner.run({language: 'javascript', code: 'let a = 42; console.log(42);'}, function(buffer) {
                 expect(buffer.stdout).to.equal('42\n');
@@ -75,7 +76,8 @@ describe( 'javascript runner', function(){
 
         it( 'should handle bad babel syntax', function(done){
             runner.run({language: 'javascript', languageVersion: '6.x/babel', code: 'var a = function(){returns 42;};\na();'}, function(buffer) {
-                expect(buffer.stderr).to.contain('kata: Unexpected token:27');
+                //expect(buffer.stderr).to.contain('kata: Unexpected token:27');
+                expect(buffer.stderr).to.contain('kata: Unexpected token, expected ;:27\nvar a = function(){returns 42;};\n                         ^');
                 done();
             });
         });
