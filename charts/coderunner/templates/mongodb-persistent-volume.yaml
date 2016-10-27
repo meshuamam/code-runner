@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ .Values.mongoDataDisk }}
+  name: {{ .Values.mongo.diskName }}
   labels:
-    name: {{ .Values.mongoDataDisk }}
+    heritage: coderunner
+    name: {{ .Values.mongo.diskName }}
 spec:
   capacity:
-    storage: 500Gi
+    storage: {{ .Values.mongo.diskSize }}
   accessModes:
     - ReadWriteOnce
   gcePersistentDisk:
-    pdName: {{ .Values.mongoDataDisk | quote }}
+    pdName: {{ .Values.mongo.diskName | quote }}
     fsType: "ext4"
