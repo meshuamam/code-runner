@@ -3,7 +3,7 @@ HOSTNAME=quay.io/codaisseur
 # Building haskell and erlang images have been suspended (frozen) until they are able to be repaired
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems erlang haskell
 # CONTAINERS=dotnet jvm node python ruby alt func dart systems rust julia crystal
-CONTAINERS=ruby
+CONTAINERS=node ruby
 
 ALL_CONTAINERS=${CONTAINERS} base
 
@@ -36,7 +36,7 @@ deep-clean: docker_rmi
 pull:
 	docker pull quay.io/codaisseur/base-runner
 	docker pull quay.io/codaisseur/ruby-runner
-	# docker pull quay.io/codaisseur/node-runner
+	docker pull quay.io/codaisseur/node-runner
 	# docker pull quay.io/codaisseur/python-runner
 	# docker pull quay.io/codaisseur/dotnet-runner
 	# docker pull quay.io/codaisseur/jvm-runner
@@ -52,7 +52,7 @@ pull:
 save:
 	docker save codaisseur/base-runner > build/image.tar
 	docker save codaisseur/ruby-runner > build/image.tar
-	# docker save codaisseur/node-runner > build/image.tar
+	docker save codaisseur/node-runner > build/image.tar
 	# docker save codaisseur/python-runner > build/image.tar
 	# docker save codaisseur/dotnet-runner > build/image.tar
 	# docker save codaisseur/jvm-runner > build/image.tar
@@ -67,4 +67,4 @@ save:
 push:
 	docker push quay.io/codaisseur/base-runner
 	docker push quay.io/codaisseur/ruby-runner
-	# docker push quay.io/codaisseur/node-runner
+	docker push quay.io/codaisseur/node-runner
