@@ -21,8 +21,8 @@ spec:
     spec:
       containers:
         - name: coderunner-node
-          image: "quay.io/codaisseur/ruby-runner:latest"
-          imagePullPolicy: "Always"
+          image: "{{ .Values.imageRegistry }}/{{ .Values.node.imageName }}:{{ .Values.node.imageTag }}"
+          imagePullPolicy: {{ default "Always" .Values.node.imagePullPolicy }}
           entrypoint: ''
           command: ["npm","start"]
           ports:
@@ -30,7 +30,7 @@ spec:
               name: http
           env:
             - name: "DATABASE_URL"
-              value: "mongodb://{{ .Values.mongodbUsername }}:{{ .Values.mongodbPassword }}@coderunner-mongo:27017/{{ .Values.mongodbDatabase }}"
+              value: "mongodb://{{ .Values.mongo.dbUsername }}:{{ .Values.mongo.dbPassword }}@coderunner-mongo:27017/{{ .Values.mongo.dbDatabase }}"
           livenessProbe:
             httpGet:
               path: /

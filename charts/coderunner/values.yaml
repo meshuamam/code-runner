@@ -28,3 +28,9 @@ ruby:
   ## Change these when we release a stable version
   imageTag: latest
   imagePullPolicy: "Always"
+
+node:
+  imageName: node-runner
+  ## Change these when we release a stable version
+  imageTag: latest
+  imagePullPolicy: "Always"
