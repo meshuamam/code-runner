@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: coderunner-ruby
+  name: ruby
   labels:
     heritage: coderunner
 spec:
