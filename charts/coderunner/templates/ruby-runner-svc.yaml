@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coderunner-ruby
+  name: ruby
   labels:
     app: coderunner-ruby
     heritage: coderunner

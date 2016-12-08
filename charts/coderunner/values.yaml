@@ -2,37 +2,35 @@
 # This is a YAML-formatted file.
 # Declare name/value pairs to be passed into your templates.
 # name: value
-
 imageRegistry: "quay.io/codaisseur"
-## Change these when we release a stable version
-dockerTag: latest
-pullPolicy: "Always" # "IfNotPresent"
 
-mongodbImageTag: 3.2.9-r2
-mongoDataDisk: "mongodb-coderunner-disk"
+storage:
+  standardClassName: slow
+  ssdClassName: fast
+  provisioner: kubernetes.io/gce-pd
+  standardType: pd-standard
+  ssdType: pd-ssd
+  zone: europe-west1-b
 
-## Specify a imagePullPolicy
-## 'Always' if mongodbImageTag is 'latest', else set to 'IfNotPresent'
-## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
-##
-imagePullPolicy: IfNotPresent
+mongo:
+  diskName: "mongodb-coderunner-disk"
+  storageClassName: fast
+  diskSize: 500Gi
+  imageTag: 3.2.9-r2
+  imagePullPolicy: IfNotPresent
+  dbRootPassword: "root"
+  dbUsername: "coderunner"
+  dbPassword: "verysecuremuchpasswordwow"
+  dbDatabase: "coderunner"
 
-## MongoDB admin password
-## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
-##
-mongodbRootPassword: "root"
+ruby:
+  imageName: ruby-runner
+  ## Change these when we release a stable version
+  imageTag: latest
+  imagePullPolicy: "Always"
 
-## MongoDB custom user
-## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
-##
-mongodbUsername: "coderunner"
-
-## MongoDB custom user password
-## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
-##
-mongodbPassword: "mypass"
-
-## Database to create
-## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run
-##
-mongodbDatabase: "coderunner"
+node:
+  imageName: node-runner
+  ## Change these when we release a stable version
+  imageTag: latest
+  imagePullPolicy: "Always"

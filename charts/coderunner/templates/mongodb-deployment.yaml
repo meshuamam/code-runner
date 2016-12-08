@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: coderunner-mongo
-        image: "bitnami/mongodb:{{ default "" .Values.dockerTag }}"
-        imagePullPolicy: {{ default "Always" .Values.imagePullPolicy }}
+        image: "bitnami/mongodb:{{ default "" .Values.mongo.imageTag }}"
+        imagePullPolicy: {{ default "Always" .Values.mongo.imagePullPolicy }}
         env:
         - name: MONGODB_ROOT_PASSWORD
           valueFrom:
@@ -24,14 +24,14 @@ spec:
               name: coderunner-mongo
               key: mongodb-root-password
         - name: MONGODB_USERNAME
-          value: {{ default "" .Values.mongodbUsername | quote }}
+          value: {{ default "" .Values.mongo.dbUsername | quote }}
         - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: coderunner-mongo
               key: mongodb-password
         - name: MONGODB_DATABASE
-          value: {{ default "" .Values.mongodbDatabase | quote }}
+          value: {{ default "" .Values.mongo.dbDatabase | quote }}
         - name: "POD_NAMESPACE"
           valueFrom:
             fieldRef:
@@ -60,6 +60,5 @@ spec:
           mountPath: /bitnami/mongodb
       volumes:
       - name: mongodb-data
-        gcePersistentDisk:
-          pdName: {{ .Values.mongoDataDisk }}
-          fsType: ext4
+        persistentVolumeClaim:
+          claimName: "{{ .Values.mongo.diskName }}-claim"

@@ -1,0 +1,5 @@
+mongo:
+  dbRootPassword: "password"
+  dbUser: "codaisseur"
+  dbPassword: "password"
+  dbDatabase: "coderunner"

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ .Values.mongo.diskName }}-claim"
+  labels:
+    heritage: coderunner
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "{{ .Values.mongo.storageClassName }}"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.mongo.diskSize }}

@@ -8,5 +8,5 @@ set -ex
 helm install \
     --namespace coderunner \
     --name coderunner-dev \
-    --values=dev.yaml \
+    --values=dev-settings.yaml \
     coderunner
